@@ -357,23 +357,6 @@ const planes = 'A320neo';
 console.log(plane.includes('A320'));
 
 
-
-// const newName = ['Mr.', firstName, lastName.toUpperCase()].join('');
-// console.log(newName);
-
-// const capitalizeName = function(name){
-//     const names = name.split(' ');
-//     const namesUpper = [];
-
-//     for(const n of names){
-//         namesUpper.push(n[0].toUpperCase() + n.slice(1));
-//     }
-// }
-
-// capitalizeName('jessica ann smith davis')
-// capitalizeName('jonas schmedtman');
-
-
 //================padding
 
 const message = 'Go to gate 23!';
@@ -425,3 +408,158 @@ else
 checkIn(flight,jonas);
 console.log(flight);
 console.log(jonas);
+
+//===== JavaScript Callbacks
+function dmessage(some) {
+    document.getElementById("temp").innerHTML = some;
+  }
+  
+  function numb1() {
+    dmessage("Hello Neha");
+  }
+  
+  function numb2() {
+    dmessage("Goodbye Sneha");
+  }
+
+  function numb3(){
+    dmessage("Bye Bye Everyone");
+  }
+  
+ numb1();
+ numb2();
+ numb3();
+
+ //===== callback 2nd example
+ function dismessage(some) {
+    document.getElementById("temp1").innerHTML = some;
+  }
+  
+  function num1() {
+    dismessage("Hello Neha");
+  }
+  
+  function num2() {
+    dismessage("Goodbye Sneha");
+  }
+
+  function num3(){
+    dismessage("Bye Bye Everyone");
+  }
+  
+ num2();
+ num1();
+
+
+ //===== Sequence Control
+ function Displayer(some) {
+    document.getElementById("demo").innerHTML = some;
+  }
+  
+  function Calculator(num1, num2) {
+    let sub = num1 - num2;
+    return sub;
+  }
+  
+  let result = Calculator(50, 25);
+  Displayer(result);
+
+  //===== callback ex3
+
+const myNumbers = [41, 11, -20, -7, 15, 19, -6];
+const posNumbers = removeNeg(myNumbers, (x) => x >= 0);
+document.getElementById("demo").innerHTML = posNumbers;
+function removeNeg(numbers, callback) {
+  const myArray = [];
+  for (const x of numbers) {
+    if (callback(x)) {
+      myArray.push(x);
+    }
+  }
+  return myArray;
+}
+
+//===== Asynchronous JavaScript
+
+function myDisplayer(something){
+    document.getElementById("demo2").innerHTML = something;
+}
+ function myCalculator(num1, num2, mycallback){
+    let sum = num1 + num2;
+    mycallback(sum);
+ }
+  myCalculator(25, 25, myDisplayer);
+
+  //=== Timeout function
+
+  setTimeout(myfunction, 3000);
+
+  function myfunction(){
+    document.getElementById("dempo").innerHTML = "I like Pune";
+  }
+  // As a value pass
+  setTimeout(function() { myFunction("I love My India !!!"); }, 3000);
+
+function myFunction(value) {
+  document.getElementById("dempo1").innerHTML = value;
+}
+// ==== Intervals
+// setInterval(myFunction, 1000);
+
+//  function myfunction(){
+//     let a = new Date();
+//     document.getElementById("dempot1").innerHTML = 
+//     a.getHours() + ":" +
+//     a.getMinutes() + ":" +
+//     a.getSeconds();
+// }   
+  
+// ====== Promise 
+
+function myDisplayer(some){
+    document.getElementById("dem").innerHTML = some;
+}
+let myPromise = new Promise(function(myResolve, myReject){
+    let x = 9;
+    if(x == 9){
+        myResolve("OK");
+    }
+    else{
+        myReject("Error");
+    }    
+});
+myPromise.then(
+    function(value) {myDisplayer(value);},
+    function(error) {myDisplayer(error);}
+);
+
+// ====== JavaScript Async
+
+function myDisplayer(some){
+    document.getElementById("dempt").innerHTML = some;
+}
+
+async function myFunction() {return "Hello Everyone";}
+myFunction().then(
+    function(value) {myDisplayer(value);},
+    function(error) {myDisplayer(error);}
+);
+
+//==== Javascript Await
+
+async function myDisplay() {
+    let myPromise = new Promise(function(resolve, reject) {
+      resolve("I love Maharastra !!");
+    });
+    document.getElementById("demo").innerHTML = await myPromise;
+  }
+  
+  myDisplay();
+
+
+
+  
+
+
+  
+
