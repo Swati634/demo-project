@@ -557,3 +557,35 @@ for (let j = 0; j < ar1.length; j++) {
 
 console.log(p1, "p1");
 console.log(q1, "q1");
+
+//======Javascript Array types=====
+
+const person = ["john", "kamya","Tisha"];
+document.getElementById("dempi").innerHTML = person[0];
+
+const per = {firstname: 'john', lastname:'kela', age: 22 };
+document.getElementById("dempi").innerHTML = per.age;
+document.getElementById("dempi").innerHTML = person.length;
+document.getElementById("dempi").innerHTML = person[person.length-1];
+
+//=====Looping Array Elements
+const fruits = ['apple', 'banana', 'grapes'];
+let flen = fruits.length;
+
+let txt = '<ul>';
+for(let i=0; i < flen; i++){
+txt += "<li>" + fruits[i] + "</li>";
+}
+txt += "<ul>";
+document.getElementById("dempi").innerHTML = txt;
+
+//=====Adding Array Elements
+
+const fruit = ["Banana", "Orange", "Apple"];
+document.getElementById("demo").innerHTML = fruit;
+
+function myfunction(){
+  fruit.push("Lemon");
+  document.getElementById("dempi").innerHTML = fruit;
+}
+
