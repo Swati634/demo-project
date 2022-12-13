@@ -589,3 +589,234 @@ function myfunction(){
   document.getElementById("dempi").innerHTML = fruit;
 }
 
+//===== Converting Arrays to Strings
+
+const fr = ["Banana", "Orange", "Apple"];
+document.getElementById("tem1").innerHTML = fr.toString();
+
+//==== join() Method 
+document.getElementById("tem1").innerHTML = fr.join(" * ");
+
+// POP MEthod
+
+const d1 = [1,3, 4, ,5];
+document.getElementById("tem1").innerHTML = d1;
+d1.pop();
+document.getElementById("tem1").innerHTML = d1;
+
+// JavaScript Array shift()---The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+const de1 = [1,3,4,5];
+document.getElementById("tem1").innerHTML = de1;
+de1.shift();
+document.getElementById("tem1").innerHTML = de1;
+
+// JavaScript Array unshift()---- The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+
+const fr1 = [3,4,5,6,7];
+document.getElementById("tem1").innerHTML = fr1;
+fr1.unshift(2);
+document.getElementById("tem1").innerHTML = fr1;
+
+// Changing Elements
+const fru1 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("tem1").innerHTML = fru1;
+fru1[0] = "Kiwi";
+document.getElementById("tem1").innerHTML = fru1;
+
+// concat()  : method can also take strings as arguments-- Merging an Array with Values
+const myArray = ["Emil", "Tobias", "Linus"];
+const myChildren = myArray.concat("Peter"); 
+document.getElementById("tem1").innerHTML = myChildren;
+
+// JavaScript Array splice()
+
+const fr2 = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("foogo").innerHTML = fr2;
+
+fr2.splice(2, 0, "Lemon", "Kiwi");
+document.getElementById("foogo").innerHTML = fr2;
+
+// JavaScript Array slice()--- The slice() method slices out a piece of an array into a new array.
+
+const fre = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fre.slice(1);
+document.getElementById("tem1").innerHTML = fre + "<br><br>" + citrus;
+
+// JavaScript Sorting Arrays--- The sort() method sorts an array alphabetically:
+const frr1 = [3,5,8,6,9];
+document.getElementById("tem1").innerHTML = frr1;
+frr1.sort();
+document.getElementById("tem1").innerHTML = frr1;
+
+// Reversing an Array-- The reverse() method reverses the elements in an array.You can use it to sort an array in descending order
+
+const gh = [3,5,8,6,9];
+document.getElementById("tem1").innerHTML = gh;
+gh.sort();
+document.getElementById("tem1").innerHTML = gh;
+gh.reverse();
+document.getElementById("tem1").innerHTML = gh;
+
+// The Compare Function---
+
+const points = [40, 100 , 30, 50, 120];
+document.getElementById("points").innerHTML = points;
+
+function myfunction1()
+{
+  points.sort();
+  document.getElementById("points").innerHTML = points;
+}
+
+function myfunction1()
+{
+  points.sort(function(a, b){return a - b});
+  document.getElementById("points").innerHTML = points;
+}
+
+
+
+//==== Lowest Number
+const pot = [40, 100, 1, 5, 25, 10];
+pot.sort(function(x1, y1){return x1-y1});
+console.log(pot, "pot");
+document.getElementById("demopp").innerHTML = pot;
+
+// ==== Highest Number
+
+const k1 = [40, 100, 1, 5, 25, 10];
+document.getElementById("demoppt").innerHTML = myArrayMax(k1);
+
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+
+//===Example (Find Min)
+const no = [40, 100, 11, 5, 25, 10];
+document.getElementById("num").innerHTML = myArrayMin(no);
+
+function myArrayMin(arr) {
+  let len = arr.length;
+  let min = Infinity;
+  while (len--) {
+    if (arr[len] < min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}
+
+//====JavaScript Array forEach()====
+
+const numbers = [45, 4, 9, 16, 25];
+
+let text1 = "";
+numbers.forEach(myFunction3);
+document.getElementById("num").innerHTML = text1;
+
+function myFunction3(value) {
+  text1 += value + "<br>"; 
+}
+
+//=== Map() Function====
+
+const no1 = [45, 4, 9, 16, 25];
+const no2 = no1.map(myfun2);
+document.getElementById("num").innerHTML = no2;
+ function myfun2(value, index, array){
+  return value / 2;
+ }
+
+ //=== Filter() function=====
+
+ const nb1 = [45, 4, 9, 16, 25];
+ const over10 = nb1.filter(myFun4);
+ document.getElementById("num").innerHTML = over10;
+ function myFun4(value, index, array) {
+   return value > 10;
+ }
+
+ // =====Reduce() Function====
+
+ const numbe2 = [45, 4, 9, 16, 25];
+ let sum2 = numbe2.reduce(myfunc);
+
+ document.getElementById("num").innerHTML = "The sum is " + sum2;
+
+ function myfunc(total,value,index,array){
+  return total + value;
+ }
+
+ //====== JavaScript Array some()=====
+
+const nums = [45, 4, 9, 16, 25];
+let someOver18 = nums.some(myFun5);
+
+document.getElementById("num").innerHTML = "Some over 18 is " + someOver18;
+
+function myFun5(value, index, array) {
+  return value > 18;
+}
+//===== Indexof()========
+  const frt = ["Apple", "Orange", "Apple", "Mango"];
+  let position = frt.indexOf("Apple")+1;
+
+  document.getElementById("num").innerHTML = "Apple is found in position" + position;
+
+  //==== JavaScript Array lastIndexOf()===
+
+  const frti = ["Apple", "Orange", "Apple", "Mango"];
+  let position3 = frti.lastIndexOf("Apple")+2;
+
+  document.getElementById("num").innerHTML = "Apple is found in position" + position3;
+
+//===== JavaScript Array Find()====
+const num4 = [4, 9, 16, 25, 29];
+let first = num4.find(myFun6);
+document.getElementById("num").innerHTML = "First number over 10 is " + first;
+function myFun6(value, index, array) {
+  return value > 10;
+}
+
+//=====Javascript Array Keys======
+const fr3 = ["Apple", "Orange", "Apple", "Mango"];
+const keys = fr3.keys();
+let text5 = "";
+for(let x of keys)
+{
+  text5 += x + "<br>";
+}
+document.getElementById("num").innerHTML = text5;
+
+//==== Javascript Array Entries=====
+const fr4 = ["Apple", "Orange", "Apple", "Mango"];
+const f = fr4.entries();
+let text6 = "";
+for(let x of f)
+{
+  text6 += x + "<br>";
+}
+document.getElementById("num").innerHTML = text6;
+
+//===JavaScript Array includes()====
+const fr6 = ["Apple", "Orange", "Apple", "Mango"];
+document.getElementById("num").innerHTML = fr6.includes("Mango");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
