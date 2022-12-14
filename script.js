@@ -537,22 +537,19 @@ let halfLength = ar1.length / 2;
 const p1 = [];
 const q1 = [];
 
-console.log('-----  Test1 Divide Array length with unique numbers-----');
+console.log("-----  Test1 Divide Array length with unique numbers-----");
 for (let j = 0; j < ar1.length; j++) {
   if (p1.length < halfLength) {
-   
     if (!p1.includes(ar1[j])) {
       p1.push(ar1[j]);
-      console.log(ar1[j])
+      console.log(ar1[j]);
       continue;
     } else {
       q1.push(ar1[j]);
     }
   } else {
-    q1.push(ar1[j]);    
-   
+    q1.push(ar1[j]);
   }
-  
 }
 
 console.log(p1, "p1");
@@ -560,21 +557,21 @@ console.log(q1, "q1");
 
 //======Javascript Array types=====
 
-const person = ["john", "kamya","Tisha"];
+const person = ["john", "kamya", "Tisha"];
 document.getElementById("dempi").innerHTML = person[0];
 
-const per = {firstname: 'john', lastname:'kela', age: 22 };
+const per = { firstname: "john", lastname: "kela", age: 22 };
 document.getElementById("dempi").innerHTML = per.age;
 document.getElementById("dempi").innerHTML = person.length;
-document.getElementById("dempi").innerHTML = person[person.length-1];
+document.getElementById("dempi").innerHTML = person[person.length - 1];
 
 //=====Looping Array Elements
-const fruits = ['apple', 'banana', 'grapes'];
+const fruits = ["apple", "banana", "grapes"];
 let flen = fruits.length;
 
-let txt = '<ul>';
-for(let i=0; i < flen; i++){
-txt += "<li>" + fruits[i] + "</li>";
+let txt = "<ul>";
+for (let i = 0; i < flen; i++) {
+  txt += "<li>" + fruits[i] + "</li>";
 }
 txt += "<ul>";
 document.getElementById("dempi").innerHTML = txt;
@@ -584,7 +581,7 @@ document.getElementById("dempi").innerHTML = txt;
 const fruit = ["Banana", "Orange", "Apple"];
 document.getElementById("demo").innerHTML = fruit;
 
-function myfunction(){
+function myfunction() {
   fruit.push("Lemon");
   document.getElementById("dempi").innerHTML = fruit;
 }
@@ -594,26 +591,26 @@ function myfunction(){
 const fr = ["Banana", "Orange", "Apple"];
 document.getElementById("tem1").innerHTML = fr.toString();
 
-//==== join() Method 
+//==== join() Method
 document.getElementById("tem1").innerHTML = fr.join(" * ");
 
 // POP MEthod
 
-const d1 = [1,3, 4, ,5];
+const d1 = [1, 3, 4, , 5];
 document.getElementById("tem1").innerHTML = d1;
 d1.pop();
 document.getElementById("tem1").innerHTML = d1;
 
 // JavaScript Array shift()---The shift() method removes the first array element and "shifts" all other elements to a lower index.
 
-const de1 = [1,3,4,5];
+const de1 = [1, 3, 4, 5];
 document.getElementById("tem1").innerHTML = de1;
 de1.shift();
 document.getElementById("tem1").innerHTML = de1;
 
 // JavaScript Array unshift()---- The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
 
-const fr1 = [3,4,5,6,7];
+const fr1 = [3, 4, 5, 6, 7];
 document.getElementById("tem1").innerHTML = fr1;
 fr1.unshift(2);
 document.getElementById("tem1").innerHTML = fr1;
@@ -626,7 +623,7 @@ document.getElementById("tem1").innerHTML = fru1;
 
 // concat()  : method can also take strings as arguments-- Merging an Array with Values
 const myArray = ["Emil", "Tobias", "Linus"];
-const myChildren = myArray.concat("Peter"); 
+const myChildren = myArray.concat("Peter");
 document.getElementById("tem1").innerHTML = myChildren;
 
 // JavaScript Array splice()
@@ -644,14 +641,14 @@ const citrus = fre.slice(1);
 document.getElementById("tem1").innerHTML = fre + "<br><br>" + citrus;
 
 // JavaScript Sorting Arrays--- The sort() method sorts an array alphabetically:
-const frr1 = [3,5,8,6,9];
+const frr1 = [3, 5, 8, 6, 9];
 document.getElementById("tem1").innerHTML = frr1;
 frr1.sort();
 document.getElementById("tem1").innerHTML = frr1;
 
 // Reversing an Array-- The reverse() method reverses the elements in an array.You can use it to sort an array in descending order
 
-const gh = [3,5,8,6,9];
+const gh = [3, 5, 8, 6, 9];
 document.getElementById("tem1").innerHTML = gh;
 gh.sort();
 document.getElementById("tem1").innerHTML = gh;
@@ -660,26 +657,26 @@ document.getElementById("tem1").innerHTML = gh;
 
 // The Compare Function---
 
-const points = [40, 100 , 30, 50, 120];
+const points = [40, 100, 30, 50, 120];
 document.getElementById("points").innerHTML = points;
 
-function myfunction1()
-{
+function myfunction1() {
   points.sort();
   document.getElementById("points").innerHTML = points;
 }
 
-function myfunction1()
-{
-  points.sort(function(a, b){return a - b});
+function myfunction1() {
+  points.sort(function (a, b) {
+    return a - b;
+  });
   document.getElementById("points").innerHTML = points;
 }
 
-
-
 //==== Lowest Number
 const pot = [40, 100, 1, 5, 25, 10];
-pot.sort(function(x1, y1){return x1-y1});
+pot.sort(function (x1, y1) {
+  return x1 - y1;
+});
 console.log(pot, "pot");
 document.getElementById("demopp").innerHTML = pot;
 
@@ -716,7 +713,7 @@ numbers.forEach(myFunction3);
 document.getElementById("num").innerHTML = text1;
 
 function myFunction3(value) {
-  text1 += value + "<br>"; 
+  text1 += value + "<br>";
 }
 
 //=== Map() Function====
@@ -724,31 +721,31 @@ function myFunction3(value) {
 const no1 = [45, 4, 9, 16, 25];
 const no2 = no1.map(myfun2);
 document.getElementById("num").innerHTML = no2;
- function myfun2(value, index, array){
+function myfun2(value, index, array) {
   return value / 2;
- }
+}
 
- //=== Filter() function=====
+//=== Filter() function=====
 
- const nb1 = [45, 4, 9, 16, 25];
- const over10 = nb1.filter(myFun4);
- document.getElementById("num").innerHTML = over10;
- function myFun4(value, index, array) {
-   return value > 10;
- }
+const nb1 = [45, 4, 9, 16, 25];
+const over10 = nb1.filter(myFun4);
+document.getElementById("num").innerHTML = over10;
+function myFun4(value, index, array) {
+  return value > 10;
+}
 
- // =====Reduce() Function====
+// =====Reduce() Function====
 
- const numbe2 = [45, 4, 9, 16, 25];
- let sum2 = numbe2.reduce(myfunc);
+const numbe2 = [45, 4, 9, 16, 25];
+let sum2 = numbe2.reduce(myfunc);
 
- document.getElementById("num").innerHTML = "The sum is " + sum2;
+document.getElementById("num").innerHTML = "The sum is " + sum2;
 
- function myfunc(total,value,index,array){
+function myfunc(total, value, index, array) {
   return total + value;
- }
+}
 
- //====== JavaScript Array some()=====
+//====== JavaScript Array some()=====
 
 const nums = [45, 4, 9, 16, 25];
 let someOver18 = nums.some(myFun5);
@@ -759,17 +756,19 @@ function myFun5(value, index, array) {
   return value > 18;
 }
 //===== Indexof()========
-  const frt = ["Apple", "Orange", "Apple", "Mango"];
-  let position = frt.indexOf("Apple")+1;
+const frt = ["Apple", "Orange", "Apple", "Mango"];
+let position = frt.indexOf("Apple") + 1;
 
-  document.getElementById("num").innerHTML = "Apple is found in position" + position;
+document.getElementById("num").innerHTML =
+  "Apple is found in position" + position;
 
-  //==== JavaScript Array lastIndexOf()===
+//==== JavaScript Array lastIndexOf()===
 
-  const frti = ["Apple", "Orange", "Apple", "Mango"];
-  let position3 = frti.lastIndexOf("Apple")+2;
+const frti = ["Apple", "Orange", "Apple", "Mango"];
+let position3 = frti.lastIndexOf("Apple") + 2;
 
-  document.getElementById("num").innerHTML = "Apple is found in position" + position3;
+document.getElementById("num").innerHTML =
+  "Apple is found in position" + position3;
 
 //===== JavaScript Array Find()====
 const num4 = [4, 9, 16, 25, 29];
@@ -783,8 +782,7 @@ function myFun6(value, index, array) {
 const fr3 = ["Apple", "Orange", "Apple", "Mango"];
 const keys = fr3.keys();
 let text5 = "";
-for(let x of keys)
-{
+for (let x of keys) {
   text5 += x + "<br>";
 }
 document.getElementById("num").innerHTML = text5;
@@ -793,30 +791,100 @@ document.getElementById("num").innerHTML = text5;
 const fr4 = ["Apple", "Orange", "Apple", "Mango"];
 const f = fr4.entries();
 let text6 = "";
-for(let x of f)
-{
+for (let x of f) {
   text6 += x + "<br>";
 }
+
 document.getElementById("num").innerHTML = text6;
 
 //===JavaScript Array includes()====
 const fr6 = ["Apple", "Orange", "Apple", "Mango"];
 document.getElementById("num").innerHTML = fr6.includes("Mango");
 
+//===== Sequence Control=====
 
+function des(some) {
+  document.getElementById("num").innerHTML = some;
+}
 
+function mycalc(numx, numy) {
+  let sum = numx + numy;
+  return sum;
+}
+let res = mycalc(5, 5);
+des(res);
 
+//====settimeout function====
 
+setTimeout(function () {
+  myfunc6("I can do it");
+}, 3000);
 
+function myfunc6(value) {}
 
+//==== Async Function====
 
+async function harry() {
+  let DW = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("10 Dec");
+    }, 2000);
+  });
 
+  let BW = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("11 Dec");
+    }, 5000);
+  });
+  // DW.then(alert);
+  // BW.then(alert);
 
+  console.log("Fetching Delhi weather data please wait");
+  let delhi = await DW;
+  console.log("Fetched Delhi Weather" + delhi);
+  console.log("Fetching Banglore weather data please wait");
+  let Banglore = await BW;
+  console.log("Fetched Banglore Weather" + Banglore);
+  return [delhi, Banglore];
+}
+///==== If parallel showing data
+// const cherry = () => {
+// console.log("Hey I am cherry I m not waiting");
+// }
+// console.log("Wlcome to weather control place");
+// let k = harry()
+// let l = cherry()
+// // console.log(k);
+// k.then((value) =>{
+// console.log(value);
+// })
+// === If one by one function showing data====
+const cherry = () => {
+  console.log("Hey I am cherry I m  waiting");
+};
 
+const main1 = async () => {
+  console.log("Wlcome to weather control place");
+  let k = await harry();
+  let l = await cherry();
+};
+main1();
 
+///==== Error handling === Try catch =====
 
+setTimeout(() => {
+  console.log("Hacking wifi...Please wait...");
+}, 1000);
 
+try {
+  console.log(ABC);
+} catch (error) {
+  console.log("Balle Balle" + error);
+}
+setTimeout(() => {
+  console.log("Fatch username and password...Please wait...");
+}, 2000);
 
-
-
-
+setTimeout(() => {
+  console.log("Hacking ABC facebook ID...Please wait...");
+}, 3000);
