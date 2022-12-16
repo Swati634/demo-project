@@ -69,3 +69,6 @@ setTimeout(concurrentPromise, 7000); // same as concurrentStart
 
 // wait again
 setTimeout(parallel, 10000); // truly parallel: after 1 second, logs "fast", then after 1 more second, "slow"
+
+
+
