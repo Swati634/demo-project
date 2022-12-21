@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>Welcome To Login Page</title>
+        <body>
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Log in</h2>
+
+  <form
+    class="login-container"
+    name="simple"
+    onsubmit="return login();"
+    method="post"
+    action="d_home.html"
+  >
+    <p><input type="email" id="email" placeholder="Email" /></p>
+    <p><input type="password" id="pwd1" placeholder="Password" /></p>
+    <p><input type="submit" value="Log in" /></p>
+    <p>
+      <a href="file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_sign_up.html"
+        ><input type="signup_submit" value="Sign Up"
+      /></a>
+    </p>
+  </form>
+</div>
+</body>
+</head>
+</html>
+<script>
+  function login() {
+    var uname = document.getElementById("email").value;
+    var pwd = document.getElementById("pwd1").value;
+    var filter =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var pswd_format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+    if (uname == "") {      
+      alert("please enter user name");
+      return false;
+    } else if (pwd == "") {
+      alert("enter the password");
+      return false;
+    } else if (!filter.test(uname)) {
+      alert("Enter valid email id");
+      return false;
+    } else if (!pswd_format.test(pwd)) {
+      alert(
+        "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+      );
+      return false;
+    }
+    //  else if (pwd.length < 6 || pwd.length > 8) {
+    //   alert("Password min 6 and max length is 8");
+    //   return false;
+    // } 
+    else {
+      alert("Thank You for Login & You are Redirecting to Home Page");
+      //Redirecting to other page or webste code or you can set your own html page.
+      //window.location.href = "file:///D:/Swati/javascript/demo-project/d_sign_up.html";
+      return true;
+    }
+  }
+</script>
+
+<style>
+  body {
+    background: #456;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+  }
+
+  /* Reset top and bottom margins from certain elements */
+  .login-header,
+  .login p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* The triangle form is achieved by a CSS hack */
+  .login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #28d;
+  }
+
+  .login-header {
+    background: #28d;
+    padding: 20px;
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .login-container {
+    background: #ebebeb;
+    padding: 12px;
+  }
+
+  /* Every row inside .login-container is defined with p tags */
+  .login p {
+    padding: 12px;
+  }
+
+  .login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+  }
+
+  .login input[type="email"],
+  .login input[type="password"] {
+    background: #fff;
+    border-color: #bbb;
+    color: #555;
+  }
+
+  /* Text fields' focus effect */
+  .login input[type="email"]:focus,
+  .login input[type="password"]:focus {
+    border-color: #888;
+  }
+
+  .login input[type="submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .login input[type="submit"]:hover {
+    background: #17c;
+  }
+
+  /* Buttons' focus effect */
+  .login input[type="submit"]:focus {
+    border-color: #05a;
+  }
+
+  .login input[type="signup_submit"] {
+    background: #28d;
+    border-color: transparent;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .login input[type="signup_submit"]:hover {
+    background: #17c;
+  }
+
+  /* Buttons' focus effect */
+  .login input[type="signup_submit"]:focus {
+    border-color: #05a;
+  }
+</style>
