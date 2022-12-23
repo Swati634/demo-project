@@ -1,63 +1,53 @@
 <html>
-    <head>
-        <title>Welcome To Login Page</title>
-        <body>
-<div class="login">
-  <div class="login-triangle"></div>
+  <head>
+    <title>Welcome To Login Page</title>
 
-  <h2 class="login-header">Log in</h2>
+    <body>
+      <div class="login">
+        <div class="login-triangle"></div>
 
-  <form
-    class="login-container"
-    name="simple"
-    onsubmit="return login();"
-    method="post"
-    action="d_home.html"
-  >
-    <p><input type="email" id="email" placeholder="Email" /></p>
-    <p><input type="password" id="pwd1" placeholder="Password" /></p>
-    <p><input type="submit" value="Log in" /></p>
-    <p>
-      <a href="file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_sign_up.html"
-        ><input type="signup_submit" value="Sign Up"
-      /></a>
-    </p>
-  </form>
-</div>
-</body>
-</head>
+        <h2 class="login-header">Log in</h2>
+
+        <form>
+          <p><input type="email" id="email" placeholder="Email" /></p>
+          <p><input type="password" id="psw" placeholder="Password" /></p>
+          <p>
+            <button type="button" value="Log in" onclick="saveData()">
+              login
+            </button>
+          </p>
+          <p>
+            <a
+              href="file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_sign_up.html"
+              ><input type="signup_submit" value="Sign Up"
+            /></a>
+          </p>
+        </form>
+      </div>
+    </body>
+  </head>
 </html>
+
 <script>
-  function login() {
-    var uname = document.getElementById("email").value;
-    var pwd = document.getElementById("pwd1").value;
-    var filter =
-      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var pswd_format = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-    if (uname == "") {      
-      alert("please enter user name");
-      return false;
-    } else if (pwd == "") {
-      alert("enter the password");
-      return false;
-    } else if (!filter.test(uname)) {
-      alert("Enter valid email id");
-      return false;
-    } else if (!pswd_format.test(pwd)) {
-      alert(
-        "Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-      );
-      return false;
-    }
-    //  else if (pwd.length < 6 || pwd.length > 8) {
-    //   alert("Password min 6 and max length is 8");
-    //   return false;
-    // } 
-    else {
-      alert("Thank You for Login & You are Redirecting to Home Page");
-      //Redirecting to other page or webste code or you can set your own html page.
-      //window.location.href = "file:///D:/Swati/javascript/demo-project/d_sign_up.html";
-      return true;
+  function saveData(e) {
+    console.log("i am here");
+    let email, psw;
+    email = document.getElementById("email").value;
+    psw = document.getElementById("psw").value;
+
+    let user_records = [];
+    user_records = JSON.parse(localStorage.getItem("users"))
+      ? JSON.parse(localStorage.getItem("users"))
+      : [];
+    const valid = user_records.filter(
+      (e) => e.Email === email && e.Password === psw
+    );
+
+    if (valid.length) {
+      window.location.href =
+        "file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_home.html";
+    } else {
+      alert("Invalid ID and Password Please enter the valid data");
     }
   }
 </script>
