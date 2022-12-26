@@ -29,6 +29,13 @@
 </html>
 
 <script>
+  let name = localStorage.getItem("email") ? localStorage.getItem("email") : "";
+  console.log(name, "name");
+  if (name != "") {
+    //alert("U need to login first");
+    window.location.href =
+      "file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_home.html";
+  }
   function saveData(e) {
     console.log("i am here");
     let email, psw;
@@ -44,6 +51,7 @@
     );
 
     if (valid.length) {
+      localStorage.setItem("email", email);
       window.location.href =
         "file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_home.html";
     } else {
@@ -156,5 +164,13 @@
   /* Buttons' focus effect */
   .login input[type="signup_submit"]:focus {
     border-color: #05a;
+  }
+  button {
+    width: 100%;
+    padding: 16px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95em;
+    background: #28d;
   }
 </style>

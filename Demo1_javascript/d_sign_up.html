@@ -109,11 +109,11 @@
       user_records = JSON.parse(localStorage.getItem("users"))
         ? JSON.parse(localStorage.getItem("users"))
         : [];
-      if (
-        user_records.some((v) => {
-          return v.Email === email;
-        })
-      ) {
+      console.log(user_records, "-------");
+      const ok = user_records.some((v) => {
+        return v.Email === email;
+      });
+      if (ok.length && user_records.length) {
         alert("Duplicate Data");
       } else {
         user_records.push({
