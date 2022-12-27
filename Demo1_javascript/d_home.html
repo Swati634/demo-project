@@ -1,32 +1,3 @@
-
-
-<!-- <html>
-  <head>
-    <title>Welcome To Home Page</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <h2>Home Page</h2>
-      <button onclick="Logout();" style="float: right">Logout</button>
-      <hr />
-      <h4>
-        Name:
-        <script>
-          document.write(localStorage.getItem("email"));
-        </script>
-      </h4>
-    </div>
-  </body>
-</html> -->
-
 <script>
   let name = localStorage.getItem("email") ? localStorage.getItem("email") : "";
   console.log(name, "name");
@@ -43,6 +14,7 @@
   }
 </script>
 
+ 
 <!DOCTYPE html>
 <hr>
   <head>
@@ -55,7 +27,7 @@
 
     <div>
       <form align="center">
-        Sr.No:<input type="number" id="new_num" /> <br /><br />
+        Sr_No:<input type="text" id="new_num" /> <br /><br />
         Name :<input type="text" id="new_name" /> <br /><br />
         Country:<input type="text" id="new_country" /><br /><br />
         Age :<input type="text" id="new_age" /><br /><br />
@@ -74,14 +46,14 @@
         border="1"
       >
         <tr>
-          <th>Sr.No</th>
+          <th>Sr_No</th>
           <th>Name</th>
           <th>Country</th>
           <th>Age</th>
         </tr>
 
-        <tr id="row1">
-          <td id="new_num">1</td>
+        <!-- <tr id="row1">
+          <td id="num_row1">1</td>
           <td id="name_row1">Ankit</td>
           <td id="country_row1">India</td>
           <td id="age_row1">20</td>
@@ -110,7 +82,7 @@
         </tr>
 
         <tr id="row2">
-          <td id="new_num">2</td>
+          <td id="num_row2">2</td>
           <td id="name_row2">Shawn</td>
           <td id="country_row2">Canada</td>
           <td id="age_row2">26</td>
@@ -139,7 +111,7 @@
         </tr>
 
         <tr id="row3">
-          <td id="new_num">3</td>
+          <td id="num_row3">3</td>
           <td id="name_row3">Rahul</td>
           <td id="country_row3">India</td>
           <td id="age_row3">19</td>
@@ -165,13 +137,17 @@
               onclick="delete_row('3')"
             />
           </td>
-        </tr>
+        </tr> -->
       </table>
     </div>
   </body>
 </html> 
 
 <style>
+table#data_table {
+    max-width: 1000px;
+}
+
   h1.emp_details {
     text-align: center;
     color: #7a1247;
