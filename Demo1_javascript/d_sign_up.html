@@ -1,70 +1,44 @@
 <html>
-  <head>
-    <title>Welcome To Registration Form</title>
-  </head>
-  <body>
-    <div class="container" id="main">
-      <h2>Sign Up</h2>
-      <form action="#">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="t1"
-            placeholder="Enter Your Name"
-            name="email"
-          />
-        </div>
-        <br />
 
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            class="form-control"
-            id="t2"
-            placeholder="Enter Your Email Address"
-            name="email"
-          />
-        </div>
-        <br />
+<head>
+  <title>Welcome To Registration Form</title>
+</head>
 
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="t3"
-            placeholder="Enter Your Password"
-            name="pwd"
-          />
-        </div>
-        <br />
+<body>
+  <div class="container" id="main">
+    <h2>Sign Up</h2>
+    <form action="#">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="t1" placeholder="Enter Your Name" name="email" />
+      </div>
+      <br />
 
-        <div class="form-group">
-          <label for="pwd">Confirm Password:</label>
-          <input
-            type="password"
-            class="form-control"
-            id="t4"
-            placeholder="Enter Your Confirm  Password"
-            name="cpwd"
-          />
-        </div>
-        <br />
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="t2" placeholder="Enter Your Email Address" name="email" />
+      </div>
+      <br />
 
-        <button
-          type="button"
-          onclick="registration()"
-          id="save_btn"
-          class="btn btn-default"
-        >
-          OK
-        </button>
-      </form>
-    </div>
-  </body>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="t3" placeholder="Enter Your Password" name="pwd" />
+      </div>
+      <br />
+
+      <div class="form-group">
+        <label for="pwd">Confirm Password:</label>
+        <input type="password" class="form-control" id="t4" placeholder="Enter Your Confirm  Password" name="cpwd" />
+      </div>
+      <br />
+
+      <button type="button" onclick="registration()" id="save_btn" class="btn btn-default">
+        OK
+      </button>
+    </form>
+  </div>
+</body>
+
 </html>
 <script>
   function registration() {
@@ -125,7 +99,7 @@
         localStorage.setItem("users", JSON.stringify(user_records));
         alert("Thank You for Sign UP & You are Redirecting to Home Page");
         window.location.href =
-          "file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_home.html";
+          "d_home.html";
       }
     }
   }

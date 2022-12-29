@@ -1,31 +1,31 @@
 <html>
-  <head>
-    <title>Welcome To Login Page</title>
 
-    <body>
-      <div class="login">
-        <div class="login-triangle"></div>
+<head>
+  <title>Welcome To Login Page</title>
 
-        <h2 class="login-header">Log in</h2>
+<body>
+  <div class="login">
+    <div class="login-triangle"></div>
 
-        <form>
-          <p><input type="email" id="email" placeholder="Email" /></p>
-          <p><input type="password" id="psw" placeholder="Password" /></p>
-          <p>
-            <button type="button" value="Log in" onclick="saveData()">
-              login
-            </button>
-          </p>
-          <p>
-            <a
-              href="file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_sign_up.html"
-              ><input type="signup_submit" value="Sign Up"
-            /></a>
-          </p>
-        </form>
-      </div>
-    </body>
-  </head>
+    <h2 class="login-header">Log in</h2>
+
+    <form>
+      <p><input type="email" id="email" placeholder="Email" /></p>
+      <p><input type="password" id="psw" placeholder="Password" /></p>
+      <p>
+        <button type="button" value="Log in" onclick="saveData()">
+          login
+        </button>
+      </p>
+      <p>
+        <a href="file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_sign_up.html"><input type="signup_submit"
+            value="Sign Up" /></a>
+      </p>
+    </form>
+  </div>
+</body>
+</head>
+
 </html>
 
 <script>
@@ -34,7 +34,7 @@
   if (name != "") {
     //alert("U need to login first");
     window.location.href =
-      "file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_home.html";
+      "d_home.html";
   }
   function saveData(e) {
     console.log("i am here");
@@ -53,7 +53,7 @@
     if (valid.length) {
       localStorage.setItem("email", email);
       window.location.href =
-        "file:///D:/Swati/javascript/demo-project/Demo1_javascript/d_home.html";
+        "d_home.html";
     } else {
       alert("Invalid ID and Password Please enter the valid data");
     }
@@ -165,6 +165,7 @@
   .login input[type="signup_submit"]:focus {
     border-color: #05a;
   }
+
   button {
     width: 100%;
     padding: 16px;
