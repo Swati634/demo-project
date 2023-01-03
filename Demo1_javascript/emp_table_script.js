@@ -1,10 +1,15 @@
 function dlt(id) {
 
   fetch(
-    'https://crudcrud.com/api/b1df15bc14f54134a2f6063814fdc4bf/data/' + id, {
+    'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data/' + id, {
     method: 'DELETE'
+  }).then((response) => {
+    if (response.status === 200) {
+      const del = response.json()
+    } else {
+      console.log(response)
+    }
   })
-    .then(response => console.log(response))
   getResponse();
   clear();
 }
@@ -33,7 +38,7 @@ const add_row = async () => {
     if (id) {
       console.log(id)
       const response = await fetch(
-        `https://crudcrud.com/api/b1df15bc14f54134a2f6063814fdc4bf/data/` + id,
+        `https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data/` + id,
         {
           headers: { "Content-Type": "application/json; charset=utf-8" },
           method: "PUT",
@@ -49,7 +54,7 @@ const add_row = async () => {
       localStorage.removeItem('userIds');
     } else {
       const response = await fetch(
-        'https://crudcrud.com/api/b1df15bc14f54134a2f6063814fdc4bf/data',
+        'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data',
         {
           headers: { "Content-Type": "application/json; charset=utf-8" },
           method: "POST",
@@ -62,7 +67,6 @@ const add_row = async () => {
       );
       const data = await response.json();
       console.log(data);
-
     }
     var myModalEl = document.getElementById("exampleModal");
     getResponse();
@@ -73,7 +77,7 @@ const add_row = async () => {
 };
 async function getResponse() {
   const response = await fetch(
-    'https://crudcrud.com/api/b1df15bc14f54134a2f6063814fdc4bf/data',
+    'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data',
     {
       headers: { "Content-Type": "application/json; charset=utf-8" },
       method: "GET",
@@ -88,11 +92,10 @@ getResponse()
 function displaydata(demo) {
 
   let table = '';
-  table += `<tr><th>Sr_No</th><th>Name</th><th>Country</th><th>Age</th><th>Actions</th></tr><tbody>`;
+  table += `<tr><th>Name</th><th>Country</th><th>Age</th><th>Actions</th></tr><tbody>`;
 
   demo.length && demo.map((demos, index) => {
-    table = table + `<tr>\
-    <td>`+ demos._id + `</td>
+    table = table + `<tr>\    
     <td>`+ demos.Name + `</td>
     <td>`+ demos.Country + `</td>
     <td>`+ demos.Age + `</td>\
@@ -109,7 +112,7 @@ function displaydata(demo) {
 
 async function getSingleUserData(id) {
   const response = await fetch(
-    'https://crudcrud.com/api/b1df15bc14f54134a2f6063814fdc4bf/data/' + id,
+    'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data/' + id,
     {
       headers: { "Content-Type": "application/json; charset=utf-8" },
       method: "GET",
@@ -129,4 +132,3 @@ function edit(userId) {
 }
 
 
-//'${x._id}') " 
