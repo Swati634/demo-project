@@ -1,7 +1,8 @@
-function dlt(id) {
 
+let url = 'https://crudcrud.com/api/06ffe1db9edf49f8b33cf12af9dc2940/data/';
+function dlt(id) {
   fetch(
-    'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data/' + id, {
+    url + id, {
     method: 'DELETE'
   }).then((response) => {
     if (response.status === 200) {
@@ -13,7 +14,6 @@ function dlt(id) {
   getResponse();
   clear();
 }
-
 function clear() {
   document.getElementById("new_num").value = "";
   document.getElementById("new_name").value = "";
@@ -21,7 +21,6 @@ function clear() {
   document.getElementById("new_age").value = "";
 }
 const add_row = async () => {
-  const id = localStorage.getItem('userIds');
   const name = document.getElementById("new_name").value;
   const country = document.getElementById("new_country").value;
   const age = document.getElementById("new_age").value;
@@ -36,9 +35,8 @@ const add_row = async () => {
     return false;
   } else {
     if (id) {
-      console.log(id)
       const response = await fetch(
-        `https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data/` + id,
+        url + id,
         {
           headers: { "Content-Type": "application/json; charset=utf-8" },
           method: "PUT",
@@ -50,11 +48,9 @@ const add_row = async () => {
         }
       );
       const data = response.json();
-      console.log(data);
-      localStorage.removeItem('userIds');
     } else {
       const response = await fetch(
-        'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data',
+        url,
         {
           headers: { "Content-Type": "application/json; charset=utf-8" },
           method: "POST",
@@ -66,7 +62,6 @@ const add_row = async () => {
         }
       );
       const data = await response.json();
-      console.log(data);
     }
     var myModalEl = document.getElementById("exampleModal");
     getResponse();
@@ -77,7 +72,7 @@ const add_row = async () => {
 };
 async function getResponse() {
   const response = await fetch(
-    'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data',
+    url,
     {
       headers: { "Content-Type": "application/json; charset=utf-8" },
       method: "GET",
@@ -88,12 +83,9 @@ async function getResponse() {
 }
 getResponse()
 
-
 function displaydata(demo) {
-
   let table = '';
   table += `<tr><th>Name</th><th>Country</th><th>Age</th><th>Actions</th></tr><tbody>`;
-
   demo.length && demo.map((demos, index) => {
     table = table + `<tr>\    
     <td>`+ demos.Name + `</td>
@@ -106,28 +98,21 @@ function displaydata(demo) {
   });
   table += `</tbody > `;
   document.getElementById("table").innerHTML = table;
-
 }
-
-
 async function getSingleUserData(id) {
   const response = await fetch(
-    'https://crudcrud.com/api/58961574b5524c8f91afe175f76739a5/data/' + id,
+    url + id,
     {
       headers: { "Content-Type": "application/json; charset=utf-8" },
       method: "GET",
     }
   );
   const data = await response.json();
-  console.log(data, '=------------');
   document.getElementById("new_name").value = data.Name;
   document.getElementById("new_country").value = data.Country;
   document.getElementById("new_age").value = data.Age;
-
 }
-
 function edit(userId) {
-  localStorage.setItem('userIds', userId)
   getSingleUserData(userId)
 }
 
