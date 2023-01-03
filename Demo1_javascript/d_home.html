@@ -9,11 +9,10 @@
     crossorigin="anonymous"></script>
   <script>
     let name = localStorage.getItem("email") ? localStorage.getItem("email") : "";
-    console.log(name, "name");
-    if (name == "") {
-      window.location.href =
-        "d_login.html";
-    }
+    // if (name == "") {
+    //   window.location.href =
+    //     "d_login.html";
+    // }
     function Logout() {
       localStorage.removeItem("email");
       localStorage.removeItem("psw");
@@ -75,30 +74,11 @@
     </table>
   </div>
   <style>
-    /* .serial_no {
-      display: none;
-    } */
-
-    /* body {
-      counter-reset: Serial;
-    }
-
-    tr td:first-child:before {
-      counter-increment: Serial;
-      content: counter(Serial);
-    }
-
-    th::before {
-      counter-increment: Serial;
-
-    } */
-
     .tr_data th {
       padding: 20px;
     }
   </style>
   <script type="text/javascript" src="emp_table_script.js"></script>
-
 </body>
 
 </html>
